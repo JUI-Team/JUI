@@ -2,4 +2,4 @@
  * Created by LyNnJeR on 2017/2/27.
  */
 console.log('JUST FOR TEST!');
-console.log('╦д╡Б ╡Бйт');
+console.log('╦д╡Б  ╡Бйт');
