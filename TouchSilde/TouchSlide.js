@@ -1,6 +1,6 @@
 /*!
  * Copyright 2013 大话主席
- * 1.1 宽度自适应（修复安卓横屏时滑动范围不变的bug）
+ *  宽度自适应（修复安卓横屏时滑动范围不变的bug）
  */
 var TouchSlide = function(a){
 	
@@ -138,9 +138,7 @@ var TouchSlide = function(a){
 		navObj.innerHTML=str;
 		navObj = navObj.children;//重置navObj
 	}
-
-	
-	
+	//左循环
 	if( effect == "leftLoop" ){
 		tempSize +=2;
 		conBox.appendChild( conBox.children[0].cloneNode(true) );
@@ -254,15 +252,13 @@ var TouchSlide = function(a){
 		{		
 			(function(){
 				var j = i;
-				navObj[j].addEventListener('click', function(e){ clearTimeout( timeout ); clearTimeout( endTimeout );  index=j; doPlay();  })
+				navObj[j].addEventListener('mouseover', function(e){ clearTimeout( timeout ); clearTimeout( endTimeout );  index=j; doPlay();  })
 			})()
 			
 		}
 	}
 	if(nextBtn){ nextBtn.addEventListener('click', function(e){ if ( loop==true || index!=navObjSize-1 ){ clearTimeout( timeout ); clearTimeout( endTimeout ); index++; doPlay(); } }) }
 	if(prevBtn){ prevBtn.addEventListener('click', function(e){ if ( loop==true || index!=0 ){ clearTimeout( timeout ); clearTimeout( endTimeout ); index--; doPlay(); } }) }
-
-
 
 	//触摸开始函数
 	var tStart = function(e){
