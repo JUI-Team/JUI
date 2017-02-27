@@ -23,6 +23,11 @@ $.JUI.Confirm({Title: '', Msg: '这是一个消息确认弹窗</br>真的是的'
 $.JUI.Autofade({Msg: '我会自动隐藏'}) 
 ```
 ***
+####5秒自动隐藏弹窗
+```
+$.JUI.Autofade({Msg: '我会在5秒后自动隐藏',hideTime: 5000})
+```
+***
 ####加载
 ```
 $.JUI.Loading('images/loading.png') 
