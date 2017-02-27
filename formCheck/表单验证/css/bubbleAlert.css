@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/*********************气泡提示框样式**********************/
+.yktip {
+	position: relative;
+	padding: 5px;
+	min-width: 52px;
+	text-align: center;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 12px;
+	background-color: #ff6633;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.yktip:before {
+	position: absolute;
+	display: inline-block;
+	border-top: 8px solid #ff6633;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	left: 18px;
+	bottom: -8px;
+	content: "";
+}
+
+.yktipWAI {
+	position: absolute;
+	z-index: 9999999;
+}
