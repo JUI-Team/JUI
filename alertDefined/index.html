@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- 
+      index.html
+      <弹窗>
+      
+      Created by LyNnJeR on 2017-02-25.
+      Copyright 2017 LyNnJeR. All rights reserved.
+ -->
+ 
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no'>
+		<title>弹出层</title>
+		<link type='text/css' rel='stylesheet' href='css/jhzz_alert.css' />
+	</head>
+	<body>
+	   <div class='mui-content-padded' style='text-align: center;'>
+			<button id='alertBtn' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined'>警告消息框</button>
+			<button id='confirmBtn' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined'>确认消息框</button>
+			<button id='toastBtn' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined'>自动消失提示框</button>
+			<button id='toastBtn2' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined'>5秒后消失提示框</button>
+			<button id='load' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined'>加载中</button>
+			<button id='info' type='button' class='zbox-btn zbox-btn-blue zbox-btn-outlined' onclick='$.JUI.Close()'>关闭加载</button>
+		</div>
+	</body>
+	<script type='text/javascript' src='js/jquery-1.7.2.min.js'></script>
+	<script type='text/javascript' src='js/jhzz_alert.js'></script>
+	<script>
+		// 使用案例
+	   $('#alertBtn').click(function(){
+           $.JUI.Alert({Title: '提示', Msg: '这是一个消息提示弹窗',yesBtn:'确定',FunL:alerts}) 
+	   })
+	   $('#confirmBtn').click(function(){
+           $.JUI.Confirm({Title: '', Msg: '这是一个消息确认弹窗</br>真的是的',FunL:confirmL,FunR:Immediate})
+	   })
+	   $('#toastBtn').click(function(){
+	      $.JUI.Autofade({Msg: '我会自动隐藏'})
+	   })
+	   $('#toastBtn2').click(function(){
+	      $.JUI.Autofade({Msg: '我会在5秒后自动隐藏',hideTime: 5000})
+	   })
+	   $('#load').click(function(){
+	   	  $.JUI.Loading('images/loading.png') 
+	   })
+       function confirmL(){
+	    	$.JUI.Close();
+	   	    $.JUI.Alert({Title: '提示', Msg: '残忍丢弃？',yesBtn:'确定'})
+       }
+       function alerts(){
+       	  $.JUI.Close();
+       }
+       function Immediate(){
+       	  //window.open('http://www.baidu.com')
+       	  $.JUI.Close();
+       }
+	
+	</script>
+</html>
